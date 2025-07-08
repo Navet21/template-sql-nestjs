@@ -10,8 +10,12 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
-    })
-  )
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
+    }),
+  );
   
   //Cambia el prefijo al que quieras que tenga la versión de tu api!
   app.setGlobalPrefix('api/templateNestJs');
