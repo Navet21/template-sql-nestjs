@@ -96,7 +96,7 @@ export class UsersService {
   }
 
   //Delete all Users
-  async deleteAllProducts() {
+  async deleteAllUsers() {
     const query = this.userRepository.createQueryBuilder('user');
     try {
       return await query.delete().where({}).execute();
