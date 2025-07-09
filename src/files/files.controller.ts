@@ -22,7 +22,7 @@ export class FilesController {
     private readonly configService: ConfigService
   ) {}
 
-  @Get('images/:imageName')
+  @Get('image/:imageName')
   findImage(
     @Res() res: Response,
     @Param('imageName') imageName : string
@@ -46,7 +46,7 @@ export class FilesController {
     if (!file) {
       throw new BadRequestException('Make sure that the file is an Image');
     }
-    const secureUrl = `${this.configService.get('HOST_API')}/files/images/${file.filename}`
+    const secureUrl = `${this.configService.get('HOST_API')}/files/image/${file.filename}`
     return {
       secureUrl,
     };
